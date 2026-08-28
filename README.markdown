@@ -10,3 +10,5 @@
 [![](https://visitcount.itsvg.in/api?id=Krishnareddy2468&icon=0&color=0)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
+![github contribution grid snake animation](https://raw.githubusercontent.com/borongyuan/borongyuan/output/github-contribution-grid-snake-dark.svg)
