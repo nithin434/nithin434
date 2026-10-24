@@ -20,14 +20,15 @@ I'm just a kid exploring stuff. These days it's mostly **software for robots**, 
 
 </td>
 <td width="36%" align="center" valign="middle">
-  <img src="assets/avatar.gif" width="210" alt="Animated pixel-art avatar">
+  <img src="assets/rover.gif" width="230" alt="Pixel-art rover driving up to an AprilTag marker and docking">
 </td>
 </tr>
 </table>
 
 ## `// open source`
 
-<a href="https://github.com/pulls?q=is%3Apr+author%3Anithin434+-user%3Anithin434"><img src="assets/open-source.svg" width="100%" alt="Contributor to microsoft/markitdown and learning-unlimited/ESP-Website"></a>
+[![microsoft/markitdown](https://img.shields.io/github/stars/microsoft/markitdown?style=flat&logo=github&logoColor=white&label=microsoft%2Fmarkitdown&labelColor=30363d&color=7aa2f7)](https://github.com/microsoft/markitdown)
+[![learning-unlimited/ESP-Website](https://img.shields.io/github/stars/learning-unlimited/ESP-Website?style=flat&logo=github&logoColor=white&label=learning-unlimited%2FESP-Website&labelColor=30363d&color=7aa2f7)](https://github.com/learning-unlimited/ESP-Website)
 
 ## `// things i've built`
 
