@@ -16,6 +16,7 @@ I'm just a kid exploring stuff. These days it's mostly **software for robots**, 
 - 🤖 &nbsp;**now:** software engineer, robotics: behavior trees, AprilTag positioning, MuJoCo / Webots simulation
 - 🛞 &nbsp;**building:** perception & navigation for [Vulcan](https://nithin434.github.io/public/projects/vulcan.html), a self-driving campus EV at VIT-AP
 - 📄 &nbsp;**published:** [IEEE AIRC 2026](https://doi.org/10.1109/AIRC69745.2026.11631384) · [IEEE iSAI-NLP 2025](https://doi.org/10.1109/ISAI-NLP66160.2025.11320726)
+- 📜 &nbsp;**patent:** application No. 202641029010 (pending): threat detection system and navigation scoring algorithm
 - 🌐 &nbsp;**everything else:** [nithin434.github.io](https://nithin434.github.io/)
 
 </td>
