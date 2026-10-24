@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="262" viewBox="0 0 1000 262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace">
+  <title>Open source contributions by Nithin Jambula</title>
+  <rect width="1000" height="262" rx="14" fill="#0d1117"/>
+  <rect x="0.5" y="0.5" width="999" height="261" rx="14" fill="none" stroke="#21262d"/>
+  <text x="28" y="44" fill="#8b949e" font-size="14">pull requests to other people's projects</text>
+  <rect x="24" y="78" width="952" height="44" rx="8" fill="#161b22" stroke="#21262d"/>
+  <circle cx="50" cy="100" r="5" fill="#a371f7"/><circle cx="50" cy="100" r="5" fill="#a371f7" opacity="0.6"><animate attributeName="r" values="5;9;5" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"/></circle>
+  <text x="68" y="105" fill="#a371f7" font-size="14" font-weight="700">merged</text>
+  <text x="140" y="105" fill="#e6edf3" font-size="16" font-weight="700">microsoft/markitdown</text>
+  <text x="470" y="105" fill="#8b949e" font-size="13">190K+ stars</text>
+  <text x="620" y="105" fill="#7aa2f7" font-size="15">#2407</text>
+  <text x="690" y="105" fill="#8b949e" font-size="14">Python 3.14 support</text>
+  <rect x="24" y="132" width="952" height="44" rx="8" fill="#161b22" stroke="#21262d"/>
+  <circle cx="50" cy="154" r="5" fill="#3fb950"/><circle cx="50" cy="154" r="5" fill="#3fb950" opacity="0.6"><animate attributeName="r" values="5;9;5" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"/></circle>
+  <text x="68" y="159" fill="#3fb950" font-size="14" font-weight="700">open</text>
+  <text x="140" y="159" fill="#e6edf3" font-size="16" font-weight="700">microsoft/markitdown</text>
+  <text x="470" y="159" fill="#8b949e" font-size="13">190K+ stars</text>
+  <text x="620" y="159" fill="#7aa2f7" font-size="15">#2619</text>
+  <text x="690" y="159" fill="#8b949e" font-size="14">MCP setup docs for VS Code</text>
+  <rect x="24" y="186" width="952" height="44" rx="8" fill="#161b22" stroke="#21262d"/>
+  <circle cx="50" cy="208" r="5" fill="#a371f7"/><circle cx="50" cy="208" r="5" fill="#a371f7" opacity="0.6"><animate attributeName="r" values="5;9;5" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"/></circle>
+  <text x="68" y="213" fill="#a371f7" font-size="14" font-weight="700">merged</text>
+  <text x="140" y="213" fill="#e6edf3" font-size="16" font-weight="700">learning-unlimited/ESP-Website</text>
+  <text x="470" y="213" fill="#8b949e" font-size="13">Splash programs</text>
+  <text x="620" y="213" fill="#7aa2f7" font-size="15">#4428</text>
+  <text x="690" y="213" fill="#8b949e" font-size="14">faster, smaller Docker builds</text>
+</svg>
