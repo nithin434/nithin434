@@ -137,32 +137,24 @@ def header_svg():
 
 # ----------------------------------------------------------- open-source.svg
 def open_source_svg():
-    rows = [
-        ("merged", "microsoft/markitdown", "190K+ stars", "#2407", "Python 3.14 support"),
-        ("open", "microsoft/markitdown", "190K+ stars", "#2619", "MCP setup docs for VS Code"),
-        ("merged", "learning-unlimited/ESP-Website", "Splash programs", "#4428", "faster, smaller Docker builds"),
-    ]
-    W, top, rh = 1000, 78, 54
-    H = top + rh * len(rows) + 22
+    rows = [("microsoft/markitdown", "190K+"), ("learning-unlimited/ESP-Website", "220+")]
+    W, top, rh = 1000, 30, 64
+    H = top + rh * len(rows) + 14
     body = []
-    for i, (state, repo, meta, pr, what) in enumerate(rows):
+    for i, (repo, stars) in enumerate(rows):
         y = top + i * rh
-        col = MERGED if state == "merged" else OPEN
-        pulse = ('<animate attributeName="r" values="5;9;5" dur="2.4s" repeatCount="indefinite"/>'
-                 '<animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"/>')
         body.append(f'''
-  <rect x="24" y="{y}" width="{W - 48}" height="{rh - 10}" rx="8" fill="{PANEL}" stroke="{FAINT}"/>
-  <circle cx="50" cy="{y + 22}" r="5" fill="{col}"/><circle cx="50" cy="{y + 22}" r="5" fill="{col}" opacity="0.6">{pulse}</circle>
-  <text x="68" y="{y + 27}" fill="{col}" font-size="14" font-weight="700">{state}</text>
-  <text x="140" y="{y + 27}" fill="{FG}" font-size="16" font-weight="700">{escape(repo)}</text>
-  <text x="470" y="{y + 27}" fill="{DIM}" font-size="13">{escape(meta)}</text>
-  <text x="620" y="{y + 27}" fill="{ACCENT}" font-size="15">{pr}</text>
-  <text x="690" y="{y + 27}" fill="{DIM}" font-size="14">{escape(what)}</text>''')
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{MONO}">
-  <title>Open source contributions by Nithin Jambula</title>
+  <rect x="24" y="{y}" width="{W - 48}" height="{rh - 14}" rx="8" fill="{PANEL}" stroke="{FAINT}"/>
+  <circle cx="50" cy="{y + 25}" r="5" fill="{MERGED}"/><circle cx="50" cy="{y + 25}" r="5" fill="{MERGED}" opacity="0.6">
+    <animate attributeName="r" values="5;9;5" dur="2.4s" begin="{i * 1.2}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" begin="{i * 1.2}s" repeatCount="indefinite"/></circle>
+  <text x="72" y="{y + 31}" fill="{FG}" font-size="18" font-weight="700">{escape(repo)}</text>
+  <text x="{W - 50}" y="{y + 31}" fill="{ACCENT}" font-size="17" text-anchor="end">&#9733; {stars}</text>''')
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{MONO}">
+  <title>Open source: contributor to microsoft/markitdown and learning-unlimited/ESP-Website</title>
   <rect width="{W}" height="{H}" rx="14" fill="{BG}"/>
-  <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" fill="none" stroke="{FAINT}"/>
-  <text x="28" y="44" fill="{DIM}" font-size="14">pull requests to other people's projects</text>{"".join(body)}
+  <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" fill="none" stroke="{FAINT}"/>{"".join(body)}
 </svg>
 '''
 

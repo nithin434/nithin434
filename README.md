@@ -13,7 +13,7 @@
 It's hard to tell you about myself in one paragraph, isn't it?
 I'm just a kid exploring stuff. These days it's mostly **software for robots**, **system architecture** and **AI agents**.
 
-- 🤖 &nbsp;**now:** robotics & autonomy software at Ananta Technologies: behavior trees, AprilTag positioning, MuJoCo / Webots simulation
+- 🤖 &nbsp;**now:** software engineer, robotics: behavior trees, AprilTag positioning, MuJoCo / Webots simulation
 - 🛞 &nbsp;**building:** perception & navigation for [Vulcan](https://nithin434.github.io/public/projects/vulcan.html), a self-driving campus EV at VIT-AP
 - 📄 &nbsp;**published:** [IEEE AIRC 2026](https://doi.org/10.1109/AIRC69745.2026.11631384) · [IEEE iSAI-NLP 2025](https://doi.org/10.1109/ISAI-NLP66160.2025.11320726)
 - 🌐 &nbsp;**everything else:** [nithin434.github.io](https://nithin434.github.io/)
@@ -27,10 +27,7 @@ I'm just a kid exploring stuff. These days it's mostly **software for robots**, 
 
 ## `// open source`
 
-<a href="https://github.com/pulls?q=is%3Apr+author%3Anithin434+-user%3Anithin434"><img src="assets/open-source.svg" width="100%" alt="Open source pull requests by Nithin Jambula"></a>
-
-- **[microsoft/markitdown](https://github.com/microsoft/markitdown)** · merged [#2407](https://github.com/microsoft/markitdown/pull/2407) Python 3.14 support · open [#2619](https://github.com/microsoft/markitdown/pull/2619) MCP setup docs for VS Code
-- **[learning-unlimited/ESP-Website](https://github.com/learning-unlimited/ESP-Website)** · merged [#4428](https://github.com/learning-unlimited/ESP-Website/pull/4428) faster, smaller Docker builds
+<a href="https://github.com/pulls?q=is%3Apr+author%3Anithin434+-user%3Anithin434"><img src="assets/open-source.svg" width="100%" alt="Contributor to microsoft/markitdown and learning-unlimited/ESP-Website"></a>
 
 ## `// things i've built`
 
