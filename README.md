@@ -4,10 +4,6 @@
 
 <br>
 
-<table>
-<tr>
-<td width="64%" valign="top">
-
 ### `> hey, i'm nithin`
 
 It's hard to tell you about myself in one paragraph, isn't it?
@@ -19,12 +15,6 @@ I'm just a kid exploring stuff. These days it's mostly **software for robots**, 
 - 📜 &nbsp;**patent:** application No. 202641029010 (pending): threat detection system and navigation scoring algorithm
 - 🌐 &nbsp;**everything else:** [nithin434.github.io](https://nithin434.github.io/)
 
-</td>
-<td width="36%" align="center" valign="middle">
-  <img src="assets/rover.gif" width="230" alt="Pixel-art rover driving up to an AprilTag marker and docking">
-</td>
-</tr>
-</table>
 
 ## `// open source`
 

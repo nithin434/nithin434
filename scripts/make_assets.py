@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Generate the profile README art: assets/header.svg (pixel avatar banner) and assets/rover.gif.
+"""Generate the profile README art: assets/header.svg (pixel avatar banner).
 
-Run:  python3 scripts/make_assets.py      (needs Pillow for the GIF: pip install pillow)
+Run:  python3 scripts/make_assets.py      
 Everything is drawn from code, so nothing depends on third-party card services.
 """
 from html import escape
 from pathlib import Path
 
-from PIL import Image, ImageDraw
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
@@ -135,105 +134,7 @@ def header_svg():
 '''
 
 
-# ----------------------------------------------------------------- rover.gif
-ROVER = """
-.......##.......
-......####......
-.......##.......
-.......##.......
-..############..
-..#..........#..
-..#.##.##.##.#..
-..#..........#..
-..############..
-.####......####.
-#....#....#....#
-#.##.#....#.##.#
-#....#....#....#
-.####......####.
-"""
-TAG = """
-##########
-#........#
-#.##..##.#
-#.#..#...#
-#...##.#.#
-#.#.#..#.#
-#..#.##..#
-#.##...#.#
-#........#
-##########
-"""
-
-
-def rover_gif():
-    S, N = 260, 36
-    hexrgb = lambda h: tuple(int(h[i:i + 2], 16) for i in (1, 3, 5))
-    bg, fg, acc, dim, ok = hexrgb(BG), hexrgb(FG), hexrgb(ACCENT), (48, 54, 61), hexrgb(OPEN)
-    rover = [r for r in ROVER.strip("\n").split("\n")]
-    tag = [r for r in TAG.strip("\n").split("\n")]
-    RP, TP = 4, 5                                   # pixel sizes
-    ground = 196
-    tag_x, tag_y = S - 26 - len(tag[0]) * TP, ground - 18 - len(tag) * TP
-    rw, rh = len(rover[0]) * RP, len(rover) * RP
-    dock_x = tag_x - rw - 14
-    frames = []
-    for f in range(N):
-        im = Image.new("RGB", (S, S), bg)
-        d = ImageDraw.Draw(im)
-        for y in range(0, S, 7):                    # faint dot grid
-            for x in range(0, S, 7):
-                if (x * 3 + y) % 21 == 0:
-                    d.point((x, y), fill=(28, 36, 52))
-        for x in range(10, S - 10, 8):              # dashed ground
-            d.line([(x, ground), (x + 4, ground)], fill=dim, width=2)
-        # dock post + AprilTag
-        d.rectangle([tag_x + len(tag[0]) * TP // 2 - 2, tag_y + len(tag) * TP, tag_x + len(tag[0]) * TP // 2 + 2, ground], fill=dim)
-        for y, row in enumerate(tag):
-            for x, c in enumerate(row):
-                d.rectangle([tag_x + x * TP, tag_y + y * TP, tag_x + x * TP + TP - 1, tag_y + y * TP + TP - 1],
-                            fill=fg if c == "#" else (22, 27, 34))
-        # rover position: drive in over 22 frames (ease-out), then sit docked
-        drive = min(f / 22, 1.0)
-        ease = 1 - (1 - drive) ** 3
-        rx = int(14 + (dock_x - 14) * ease)
-        ry = ground - rh - 2 + (1 if (f % 4 < 2 and drive < 1) else 0)   # little bounce while moving
-        docked = drive >= 1
-        # camera beam from mast to tag while approaching
-        cam = (rx + rw // 2 + 4, ry + 4)
-        tcx, tcy = tag_x + len(tag[0]) * TP // 2, tag_y + len(tag) * TP // 2
-        if not docked and f % 3 != 2:
-            for k in range(0, 100, 7):
-                t = k / 100
-                px_, py_ = cam[0] + (tcx - cam[0]) * t, cam[1] + (tcy - cam[1]) * t
-                d.point((px_, py_), fill=acc)
-        # detection box: appears once close enough, turns green when docked
-        if ease > 0.45:
-            col = ok if docked else acc
-            pad = 4 + (0 if docked else (f % 2) * 2)
-            x0, y0 = tag_x - pad, tag_y - pad
-            x1, y1 = tag_x + len(tag[0]) * TP + pad - 1, tag_y + len(tag) * TP + pad - 1
-            L = 10
-            for (cx, cy, dx, dy) in [(x0, y0, 1, 1), (x1, y0, -1, 1), (x0, y1, 1, -1), (x1, y1, -1, -1)]:
-                d.line([(cx, cy), (cx + dx * L, cy)], fill=col, width=2)
-                d.line([(cx, cy), (cx, cy + dy * L)], fill=col, width=2)
-        # rover
-        for y, row in enumerate(rover):
-            for x, c in enumerate(row):
-                if c == "#":
-                    d.rectangle([rx + x * RP, ry + y * RP, rx + x * RP + RP - 1, ry + y * RP + RP - 1], fill=fg)
-        d.rectangle([rx + 7 * RP, ry, rx + 9 * RP - 1, ry + RP - 1], fill=acc)   # camera lens
-        # status text
-        msg = "docked" if docked else ("tag 0 locked" if ease > 0.45 else "searching...")
-        d.text((14, 22), "$ rover --dock", fill=acc)
-        d.text((14, 40), msg, fill=ok if docked else hexrgb(DIM))
-        frames.append(im.convert("P", palette=Image.ADAPTIVE, colors=16))
-    frames[0].save(OUT / "rover.gif", save_all=True, append_images=frames[1:],
-                   duration=[90] * 22 + [140] * (N - 22), loop=0, optimize=True, disposal=2)
-
-
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
     (OUT / "header.svg").write_text(header_svg())
-    rover_gif()
-    print("assets/header.svg, assets/rover.gif written")
+    print("assets/header.svg written")
